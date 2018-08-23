@@ -1,8 +1,12 @@
 var mysql = require('mysql');
-var colors = require('colors');
 
-var test = function(str){
-  console.log(str.america)
-};
+// Change these values
+var con = mysql.createConnection({
+  host: "localhost",
+  port: 8889,
+  user: "root",
+  password: "root",
+  database: "bamazon"
+});
 
-module.exports = test;
+module.exports = con;

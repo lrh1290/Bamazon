@@ -1,1 +1,1 @@
-var con = require('./lib/connection');
+var con = require('./connection');
