@@ -47,7 +47,24 @@ function prompt(numberOfItems) {
       con.query("SELECT stock_quantity FROM products WHERE item_id=?", answer.id, function (err, res) {
         if (err) throw err;
         var qty = res[0].stock_quantity;
-        
+        if (qty >= answer.qty) {
+
+          // Update database
+          var qtyRemaining = qty - answer.qty;
+          con.query("UPDATE products SET ? WHERE ?", [
+            {stock_quantity: qtyRemaining}, {item_id: answer.id}
+          ], function(err,res) {
+            if (err) throw err;
+            con.query("SELECT price FROM products WHERE item_id=?", [answer.id], function(err,res){
+              if (err) throw err;
+              var total = answer.qty * res[0].price;
+              log(chalk.green('\nThanks for your order! Your total is ') + chalk.bold('$' + total) + '.');
+            });
+          });
+          
+        } else {
+          log(chalk.bgRed.white.bold("\nSorry!") + ` We only have ` + chalk.yellow.bold.underline(`${qty} in stock`) + ` right now.`);
+        };
       });
     });
 };
