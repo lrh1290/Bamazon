@@ -34,3 +34,12 @@ function main() {
   });
 };
 
+viewSales() {
+  log('');
+};
+
+
+
+createNewDept() {
+  log('');
+}
