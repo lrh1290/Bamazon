@@ -24,8 +24,6 @@ VALUES
  ('Light Bulbs', 'Hardware', 5, 50),
  ('Protein Bars', 'Food', 10, 10);
 
--- The following is for the "bamazonSupervisor.js" functionality
-
 CREATE TABLE departments(
  department_id INT NOT NULL AUTO_INCREMENT,
  department_name VARCHAR(45) NOT NULL,
