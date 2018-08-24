@@ -1,6 +1,7 @@
 var con = require('./connection');
 var inquirer = require('inquirer');
 var chalk = require('chalk');
+var Table = require('cli-table');
 var log = console.log;
 
 con.connect(function (err) {
@@ -44,10 +45,14 @@ function viewProducts() {
   log(chalk.cyan.underline("\nProducts For Sale:\n"));
   con.query('SELECT item_id, product_name, price, stock_quantity FROM products', function (err, res) {
     if (err) throw err;
-    log(chalk.black.bgYellow("ID") + " | " + chalk.black.bgYellow('Name') + " | " + chalk.black.bgYellow("Price") + " | " + chalk.black.bgYellow("Quantity"));
+    var productsTable = new Table({
+      head: ['ID', 'Name', 'Price', 'Quantity'],
+      colWidths: [4, 35, 12, 12]
+    });
     for (var i = 0; i < res.length; i++) {
-      log(res[i].item_id + " | " + res[i].product_name + " | " + "$" + res[i].price + " | " + res[i].stock_quantity);
+      productsTable.push([res[i].item_id, res[i].product_name, res[i].price, res[i].stock_quantity]);
     };
+    log(productsTable.toString());
     main();
   });
 };
@@ -56,10 +61,14 @@ function viewLowInventory() {
   log(chalk.cyan.underline("\nLess than 5 units in stock:\n"));
   con.query('SELECT item_id, product_name, price, stock_quantity FROM products WHERE stock_quantity<5', function (err, res) {
     if (err) throw err;
-    log(chalk.black.bgYellow("ID") + " | " + chalk.black.bgYellow('Name') + " | " + chalk.black.bgYellow("Price") + " | " + chalk.black.bgYellow("Quantity"));
+    var lowTable = new Table({
+      head: ['ID', 'Name', 'Price', 'Quantity'],
+      colWidths: [4, 35, 12, 12]
+    });
     for (var i = 0; i < res.length; i++) {
-      log(res[i].item_id + " | " + res[i].product_name + " | " + "$" + res[i].price + " | " + res[i].stock_quantity);
+      lowTable.push([res[i].item_id, res[i].product_name, res[i].price, res[i].stock_quantity]);
     };
+    log(lowTable.toString());
     main();
   });
 };
