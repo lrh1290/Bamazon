@@ -74,6 +74,11 @@ function prompt(numberOfItems) {
               if (err) throw err;
               var total = answer.qty * res[0].price;
               log(chalk.green.bold('\nThanks for your order! Your total is ') + chalk.bold.green.underline('$' + total) + '.\n');
+              
+              // Added for the "supervisor.js" functionality
+              updateSales(answer.id, total);
+              // End "supervisor.js" functionality
+              
               askToBuyMore();
             });
           });
@@ -84,4 +89,11 @@ function prompt(numberOfItems) {
         };
       });
     });
+};
+
+// Function for the "supervisor.js" functionality
+function updateSales(id, total) {
+  con.query(`UPDATE products SET product_sales=${total} WHERE item_id=${id};`, function(err,res){
+    if (err) throw err;
+  });
 };

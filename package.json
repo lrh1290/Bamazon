@@ -9,6 +9,9 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "bin": {
+    "bamazon": "./main.js"
+  },
   "dependencies": {
     "chalk": "^2.4.1",
     "inquirer": "^6.2.0",

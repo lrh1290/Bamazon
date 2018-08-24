@@ -25,4 +25,17 @@ VALUES
  ('Protein Bars', 'Food', 10, 4),
  ('$50 Amazon Gift Card', 'Gift Cards', 50, 50);
  
-SELECT * FROM products;
+-- The following is for the "bamazonSupervisor.js" functionality
+
+CREATE TABLE departments(
+ department_id INT NOT NULL AUTO_INCREMENT,
+ department_name VARCHAR(45) NOT NULL,
+ over_head_costs INT(10),
+ PRIMARY KEY(department_id)
+);
+
+ALTER TABLE products ADD COLUMN
+product_sales INT(20) DEFAULT 0;
+
+
+
