@@ -58,7 +58,7 @@ function viewProducts() {
 };
 
 function viewLowInventory() {
-  log(chalk.cyan.underline("\nLess than 5 units in stock:\n"));
+  log(chalk.cyan.underline("\nItems with less than 5 units in stock:\n"));
   con.query('SELECT item_id, product_name, price, stock_quantity FROM products WHERE stock_quantity<5', function (err, res) {
     if (err) throw err;
     var lowTable = new Table({
@@ -103,8 +103,8 @@ function addToInventory() {
       var productToAdd = answer.product;
       var amountToAdd = parseInt(answer.units);
 
-      con.query('UPDATE products SET ? WHERE ?', [
-        { stock_quantity: amountToAdd },
+      con.query('UPDATE products SET stock_quantity=stock_quantity+? WHERE ?', [
+        amountToAdd,
         { product_name: productToAdd }
       ], function (err, res) {
         if (err) throw err;
@@ -117,6 +117,9 @@ function addToInventory() {
 
 function addNewProduct() {
   log('');
+
+
+
   inquirer.prompt([
     {
       message: 'Name of new product:',
@@ -128,6 +131,11 @@ function addNewProduct() {
         }
         return true;
       },
+    }, {
+      message: 'Select department:',
+      name: 'department',
+      type: 'list',
+      choices
     }, {
       message: 'Price of new product:',
       name: 'price',
@@ -152,10 +160,7 @@ function addNewProduct() {
         }
         return false;
       },
-    }, {
-      message: 'Department of new product (optional):',
-      name: 'department',
-    }
+    },
   ]).then(function (answer) {
     var name = answer.name;
     var price = parseInt(answer.price);

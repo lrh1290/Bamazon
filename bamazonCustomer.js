@@ -26,14 +26,14 @@ function askToBuyMore() {
 
 function displayProducts() {
   log(chalk.cyan.underline("\nAvailable Products:\n"));
-  con.query('SELECT item_id, product_name, price FROM products', function (err, res) {
+  con.query('SELECT item_id, product_name, department_name, price, stock_quantity FROM products', function (err, res) {
     if (err) throw err;
     var productsTable = new Table({
-      head: ['ID', 'Name', 'Price'],
-      colWidths: [4, 30, 10]
+      head: ['ID', 'Name', 'Department', 'Price', 'In Stock'],
+      colWidths: [4, 30, 15, 10, 10]
     });
     for (var i = 0; i < res.length; i++) {
-      productsTable.push([res[i].item_id, res[i].product_name, "$"+res[i].price]);
+      productsTable.push([res[i].item_id, res[i].product_name, res[i].department_name, "$"+res[i].price, res[i].stock_quantity]);
     };
     log(productsTable.toString());
     console.log('');
@@ -45,9 +45,14 @@ function prompt(numberOfItems) {
   inquirer.prompt([
     {
       type: 'input',
-      message: 'Enter the product ID you would like to buy.',
+      message: "Enter the product ID you would like to buy. ('q' to exit)",
       name: 'id',
       validate: function (value) {
+        if (value.toLowerCase() === 'q') {
+
+          log(chalk.cyan.bold("\nBye! Come back again soon!"));
+          process.exit(0);
+        }
         if (isNaN(value) === false && parseInt(value) <= numberOfItems && parseInt(value) > 0) {
           return true;
         }
@@ -55,9 +60,13 @@ function prompt(numberOfItems) {
       }
     }, {
       type: 'input',
-      message: 'How many units would you like to buy?',
+      message: "How many units would you like to buy? ('q' to exit)",
       name: 'qty',
       validate: function (value) {
+        if (value.toLowerCase() === 'q') {
+          log(chalk.cyan.bold("\nBye! Come back again soon!"));
+          process.exit(0);
+        }
         if (isNaN(value) === false) {
           return true;
         }
@@ -79,11 +88,11 @@ function prompt(numberOfItems) {
               if (err) throw err;
               var total = answer.qty * res[0].price;
               log(chalk.green.bold('\nThanks for your order! Your total is ') + chalk.bold.green.underline('$' + total) + '.\n');
-              
+
               // Added for the "supervisor.js" functionality
               updateSales(answer.id, total);
               // End "supervisor.js" functionality
-              
+
               askToBuyMore();
             });
           });
