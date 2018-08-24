@@ -17,13 +17,12 @@ VALUES
  ('Surface Pro', 'Electronics', 1200.00, 4),
  ('PS4', 'Electronics', 350, 6),
  ('Xbox 1', 'Electronics', 400, 3),
- ('A Smarter Way To Learn JavaScript', 'Books', 30, 5),
+ ('Learn JavaScript Textbook', 'Books', 30, 5),
  ('Eloquent JavaScript', 'Books', 20, 10),
  ('JavaScript: The Good Parts', 'Books', 25, 8),
  ('Tool Set', 'Hardware', 50, 20),
  ('Light Bulbs', 'Hardware', 5, 50),
- ('Protein Bars', 'Food', 10, 4),
- ('$50 Amazon Gift Card', 'Gift Cards', 50, 50);
+ ('Protein Bars', 'Food', 10, 4);
  
 -- The following is for the "bamazonSupervisor.js" functionality
 
@@ -37,5 +36,9 @@ CREATE TABLE departments(
 ALTER TABLE products ADD COLUMN
 product_sales INT(20) DEFAULT 0;
 
-
-
+INSERT INTO departments (department_name, over_head_costs)
+VALUES
+ ('Electronics', 1000),
+ ('Books', 100),
+ ('Hardware', 250),
+ ('Food', 20);
