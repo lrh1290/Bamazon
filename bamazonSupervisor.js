@@ -34,12 +34,12 @@ function main() {
   });
 };
 
-viewSales() {
+function viewSales() {
   log('');
 };
 
 
 
-createNewDept() {
+function createNewDept() {
   log('');
 }

@@ -1,6 +1,7 @@
 var con = require('./connection');
 var inquirer = require('inquirer');
 var chalk = require('chalk');
+var Table = require('cli-table');
 var log = console.log;
 
 con.connect(function (err) {
@@ -27,10 +28,14 @@ function displayProducts() {
   log(chalk.cyan.underline("\nAvailable Products:\n"));
   con.query('SELECT item_id, product_name, price FROM products', function (err, res) {
     if (err) throw err;
-    log(chalk.black.bgYellow("ID") + " | " + chalk.black.bgYellow('Name') + " | " + chalk.black.bgYellow("Price"));
+    var productsTable = new Table({
+      head: ['ID', 'Name', 'Price'],
+      colWidths: [4, 30, 10]
+    });
     for (var i = 0; i < res.length; i++) {
-      log(res[i].item_id + " | " + res[i].product_name + " | " + "$" + res[i].price);
+      productsTable.push([res[i].item_id, res[i].product_name, "$"+res[i].price]);
     };
+    log(productsTable.toString());
     console.log('');
     prompt(res.length);
   });
