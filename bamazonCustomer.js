@@ -84,13 +84,14 @@ function prompt(numberOfItems) {
             { stock_quantity: qtyRemaining }, { item_id: answer.id }
           ], function (err, res) {
             if (err) throw err;
-            con.query("SELECT price FROM products WHERE item_id=?", [answer.id], function (err, res) {
+            con.query("SELECT price, department_name FROM products WHERE item_id=?", [answer.id], function (err, res) {
               if (err) throw err;
               var total = answer.qty * res[0].price;
+              var departmentName = res[0].department_name;
               log(chalk.green.bold('\nThanks for your order! Your total is ') + chalk.bold.green.underline('$' + total) + '.\n');
 
               // Added for the "supervisor.js" functionality
-              updateSales(answer.id, total);
+              updateSales(answer.id, total, departmentName);
               // End "supervisor.js" functionality
 
               askToBuyMore();
@@ -106,8 +107,11 @@ function prompt(numberOfItems) {
 };
 
 // Function for the "supervisor.js" functionality
-function updateSales(id, total) {
+function updateSales(id, total, dept) {
   con.query(`UPDATE products SET product_sales=${total} WHERE item_id=${id};`, function(err,res){
     if (err) throw err;
+    con.query(`UPDATE departments SET total_sales=total_sales+${total} WHERE department_name="${dept}";`, function(err,res){
+      if (err) throw err;
+    });
   });
 };

@@ -93,6 +93,7 @@ function addToInventory() {
       message: 'How many units to add?',
       name: 'units',
       validate: function (value) {
+        if (value == '') return false;
         if (isNaN(value) === false) {
           return true;
         }
@@ -118,7 +119,7 @@ function addToInventory() {
 function addNewProduct() {
   log('');
 
-  con.query('SELECT DISTINCT department_name FROM products;', function(err,res){
+  con.query('SELECT department_name FROM departments;', function(err,res){
     if (err) throw err;
     var departments = [];
     for (var i=0; i<res.length; i++) {
@@ -185,8 +186,5 @@ function addNewProduct() {
         });
       };
     });
-
-
-
   });
 };
