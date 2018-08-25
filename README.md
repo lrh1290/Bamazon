@@ -2,6 +2,9 @@
 A command-line storefront app with an interface for customers and employees. Built with NodeJS and MySQL.
 
 ## Installation
+
+![Install Demo](./images/)
+
 1. Clone this repository to your computer and install dependencies:
 ```
 git clone https://www.github.com/adnanyousef/Bamazon.git 
@@ -31,6 +34,6 @@ The `bamazonCustomer.js` file contains the interface intended for your customers
 
 ## Todo
 - [x] Write "Supervisor" app
-- [ ] Fix issue in Manager app with adding inventory
+- [ ] Fix issue with "Creating Database" in setup.js
 - [ ] Write documentation and installation instructions
 - [ ] Create GIF/SVG demos
