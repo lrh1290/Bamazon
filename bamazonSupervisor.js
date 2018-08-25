@@ -48,7 +48,7 @@ function viewSales() {
 
       totalProfit[i] = res[i].total_sales - res[i].over_head_costs;
 
-      table.push([res[i].department_id, res[i].department_name, res[i].over_head_costs, res[i].total_sales, totalProfit[i]]);
+      table.push([res[i].department_id, res[i].department_name, '$'+res[i].over_head_costs, '$'+res[i].total_sales, '$'+totalProfit[i]]);
     };
     log(table.toString());
     main();

@@ -26,10 +26,8 @@ node bamazonSupervisor.js
 
 ### Installation demo:
 <p align='center'>
-<img width='600' src='images/install.svg'>
+<img width='700' src='images/install.svg'>
 </p>
-
-<!-- ![Install Demo](./images/install.svg) -->
 
 # Interfaces
 ## Customer
@@ -41,11 +39,11 @@ The `bamazonCustomer.js` file contains the interface intended for your customers
 
 ### Customer demo:
 <p align='center'>
-<img width='600' src='./images/customer.svg'>
+<img width='700' src='./images/customer.svg'>
 </p>
 
 ## Manager
-The `bamazonManager.js` provides an interface for store managers to view and modify inventory. The following commands are available:
+The `bamazonManager.js` file provides an interface for store managers to view and modify inventory. The following commands are available:
 1. `View Products For Sale`: This command will print a table of your current inventory, allowing easy access to important information on your products.
 2. `View Low Inventory`: Print your current inventory that are low on stock.
 3. `Add To Inventory`: Allows you to update your database when receiving more product.
@@ -53,11 +51,24 @@ The `bamazonManager.js` provides an interface for store managers to view and mod
 
 ### Manager demo:
 <p align='center'>
-<img width='600' src='./images/manager.svg'>
+<img width='700' src='./images/manager.svg'>
 </p>
 
-## Todo
-- [x] Write "Supervisor" app
-- [ ] Fix issue with "Creating Database" in setup.js
-- [ ] Write documentation and installation instructions
-- [ ] Create GIF/SVG demos
+## Supervisor
+The `bamazonSupervisor.js` file provides an interface for supervisors to view information about specific departments, such as overhead costs, sales per department, and profit per department. Sales per department and profit per department are calculated and updated when a customer buys product. Supervisors can also add new departments, which will then allow managers to add new products for the newly created department.
+
+### Supervisor demo:
+<p align='center'>
+<img width='700' src='./images/manager.svg'>
+</p>
+
+---
+
+### Todo:
+- [ ] Fix issue with "Creating Database" in setup script
+- [x] Write documentation and installation instructions
+- [x] Create GIF/SVG demos
+ 
+### Bugs/future development
+If you encounter a bug or think of a way to further improve this app, feel free to create an issue [here](https://www.github.com/adnanyousef/Bamazon/issues).
+
