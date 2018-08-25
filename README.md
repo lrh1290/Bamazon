@@ -23,20 +23,19 @@ node bamazonCustomer.js
 node bamazonManager.js
 node bamazonSupervisor.js
 ```
----
-#### Installation demo:
+
+### Installation demo:
 <p align='center'>
 <img width='700' src='images/install.svg'>
 </p>
 
 <!-- ![Install Demo](./images/install.svg) -->
 
-## Interfaces
-### Customer
+##Interfaces
+## Customer
 The `bamazonCustomer.js` file contains the interface intended for your customers.
 
----
-#### Customer demo:
+### Customer demo:
 <p align='center'>
 <img width='700' src='./images/customer.svg'>
 </p>
