@@ -24,9 +24,9 @@ node bamazonManager.js
 node bamazonSupervisor.js
 ```
 ---
-### Installation demo:
+#### Installation demo:
 <p align='center'>
-<img width='650' src='images/install.svg'>
+<img width='700' src='images/install.svg'>
 </p>
 
 <!-- ![Install Demo](./images/install.svg) -->
@@ -36,8 +36,10 @@ node bamazonSupervisor.js
 The `bamazonCustomer.js` file contains the interface intended for your customers.
 
 ---
-Demo:
-![Customer Demo](./images/customer.svg)
+#### Customer demo:
+<p align='center'>
+<img width='700' src='./images/customer.svg'>
+</p>
 
 ## Todo
 - [x] Write "Supervisor" app
