@@ -31,7 +31,7 @@ node bamazonSupervisor.js
 
 <!-- ![Install Demo](./images/install.svg) -->
 
-##Interfaces
+# Interfaces
 ## Customer
 The `bamazonCustomer.js` file contains the interface intended for your customers.
 
