@@ -3,7 +3,7 @@ A command-line storefront app with an interface for customers and employees. Bui
 
 ## Installation
 
-![Install Demo](./images/)
+![Install Demo](./images/install.svg)
 
 1. Clone this repository to your computer and install dependencies:
 ```
