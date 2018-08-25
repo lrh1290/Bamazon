@@ -3,8 +3,6 @@ A command-line storefront app with an interface for customers and employees. Bui
 
 ## Installation
 
-![Install Demo](./images/install.svg)
-
 1. Clone this repository to your computer and install dependencies:
 ```
 git clone https://www.github.com/adnanyousef/Bamazon.git 
@@ -25,6 +23,12 @@ node bamazonCustomer.js
 node bamazonManager.js
 node bamazonSupervisor.js
 ```
+Installation demo:
+<p align='center'>
+<img width='500' src='images/install.svg'>
+</p>
+
+<!-- ![Install Demo](./images/install.svg) -->
 
 ## Interfaces
 ### Customer
