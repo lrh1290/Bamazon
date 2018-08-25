@@ -26,7 +26,7 @@ node bamazonSupervisor.js
 
 ### Installation demo:
 <p align='center'>
-<img width='700' src='images/install.svg'>
+<img width='600' src='images/install.svg'>
 </p>
 
 # Interfaces
@@ -39,7 +39,7 @@ The `bamazonCustomer.js` file contains the interface intended for your customers
 
 ### Customer demo:
 <p align='center'>
-<img width='700' src='./images/customer.svg'>
+<img width='600' src='./images/customer.svg'>
 </p>
 
 ## Manager
@@ -51,7 +51,7 @@ The `bamazonManager.js` file provides an interface for store managers to view an
 
 ### Manager demo:
 <p align='center'>
-<img width='700' src='./images/manager.svg'>
+<img width='600' src='./images/manager.gif'>
 </p>
 
 ## Supervisor
@@ -59,7 +59,7 @@ The `bamazonSupervisor.js` file provides an interface for supervisors to view in
 
 ### Supervisor demo:
 <p align='center'>
-<img width='700' src='./images/manager.svg'>
+<img width='600' src='./images/manager.svg'>
 </p>
 
 ---
