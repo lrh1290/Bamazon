@@ -51,7 +51,7 @@ The `bamazonManager.js` file provides an interface for store managers to view an
 
 ### Manager demo:
 <p align='center'>
-<img width='600' src='./images/manager.gif'>
+<img width='600' src='./images/manager.svg'>
 </p>
 
 ## Supervisor
