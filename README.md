@@ -25,7 +25,7 @@ node bamazonSupervisor.js
 ```
 Installation demo:
 <p align='center'>
-<img width='500' src='images/install.svg'>
+<img width='650' src='images/install.svg'>
 </p>
 
 <!-- ![Install Demo](./images/install.svg) -->
