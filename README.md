@@ -15,7 +15,7 @@ node setup.js
 ```
 The `setup.js` script provides a simple and interactive interface in your terminal which will update `connection.js` for you. If your server runs the default MySQL hostname, port, username, and password, you can skip this step.
 
-3. Set up the database by running the commands in `schema.sql` in your favorite MySql manager (ex. Sequel Pro), or run `node setup.js` and choose the "Set Up Database" option. This will get your database up and running, and fill it with some sample data.
+3. Set up the database by running the commands in `schema.sql` in your favorite MySql manager (ex. Sequel Pro), or run `node setup.js` and choose the "Create Database" option. This will get your database up and running, and fill it with some sample data.
 
 4. Run the app with one of the following commands. Usage for each is documented below:
 - `node bamazonCustomer.js`
