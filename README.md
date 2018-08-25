@@ -62,7 +62,6 @@ The `bamazonSupervisor.js` file provides an interface for supervisors to view in
 <img width='600' src='./images/manager.svg'>
 </p>
 
----
 ## Libraries used:
 - [Chalk](https://github.com/chalk/chalk)
 - [MySQL](https://github.com/mysqljs/mysql)
