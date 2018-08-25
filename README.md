@@ -63,12 +63,18 @@ The `bamazonSupervisor.js` file provides an interface for supervisors to view in
 </p>
 
 ---
+## Libraries used:
+- [Chalk](https://github.com/chalk/chalk)
+- [MySQL](https://github.com/mysqljs/mysql)
+- [Inquirer](https://github.com/SBoudrias/Inquirer.js)
+- [CLI-Table](https://github.com/Automattic/cli-table)
 
-### Todo:
+## Bugs/future development
+If you encounter a bug or think of a way to further improve this app, feel free to create an issue [here](https://www.github.com/adnanyousef/Bamazon/issues).
+
+### Current todo list:
 - [ ] Fix issue with "Creating Database" in setup script
 - [x] Write documentation and installation instructions
 - [x] Create GIF/SVG demos
  
-### Bugs/future development
-If you encounter a bug or think of a way to further improve this app, feel free to create an issue [here](https://www.github.com/adnanyousef/Bamazon/issues).
 
