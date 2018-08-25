@@ -49,21 +49,23 @@ function setupCredentials() {
   ]).then(function (answer) {
     var fileContents = 
     `var mysql = require("mysql");\n
-    var con = mysql.createConnection({
-      host: "${answer.hostname}",
-      port: ${parseInt(answer.port)},
-      user: "${answer.username}",
-      password: "${answer.password}",
-      database: "bamazon"
-    });\n
-    module.exports = con;\n`;
+var con = mysql.createConnection({
+  host: "${answer.hostname}",
+  port: ${parseInt(answer.port)},
+  user: "${answer.username}",
+  password: "${answer.password}",
+  database: "bamazon"
+});\n
+module.exports = con;\n`;
 
     fs.writeFile('connection1.js', fileContents, function(err){
       if (err) throw err;
-      console.log(chalk.green.bold("\nCredentials saved!\n"));
+      console.log(chalk.green.bold("\nCredentials saved!"));
 
       main();
 
     });
   });
 };
+
+
