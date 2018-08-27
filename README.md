@@ -10,12 +10,12 @@ cd Bamazon
 npm install
 ```
 
-2. Set up your MySQL credentials. Either open `connection.js` in your favorite text editor, or run the included `setup.js` script and choose the "Setup MySQL Credentials" option:
+2. Set up your MySQL credentials. Either open `connection.js` in your favorite text editor, or run the included `setup.js` script:
 ```
 node setup.js
 ```
 
-3. Set up the database by running the commands in `schema.sql` in your favorite MySql manager (ex. Sequel Pro), or run `node setup.js` and choose the "Create Database" option. This will get your database up and running, and fill it with some sample data.
+3. Set up the database by running the commands in `schema.sql` in your favorite MySql manager (ex. Sequel Pro). This will get your database up and running, and fill it with some sample data.
 
 4. Run the app with one of the following commands. Usage for each is documented below:
 ```bash 
