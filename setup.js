@@ -14,6 +14,13 @@ function setupCredentials() {
     message: 'Enter your MySQL port:',
     name: 'port',
     default: 8889,
+    validate: function (value) {
+      if (value == '') return false;
+      if (isNaN(value) === false) {
+        return true;
+      }
+      return false;
+    },
   }, {
     message: 'Enter your MySQL username:',
     name: 'username',
@@ -26,7 +33,7 @@ function setupCredentials() {
   }
   ]).then(function (answer) {
     var fileContents = 
-    `var mysql = require("mysql");\n
+    `var mysql = require('mysql');\n
 var con = mysql.createConnection({
   host: "${answer.hostname}",
   port: ${parseInt(answer.port)},
